@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 Schematron for Name Space Id:galileo  Version:1.0.0.0 - Fri Apr 26 17:19:31 GMT 2019 -->
+  <!-- Generated from the PDS4 Information Model Version 1.11.0.0 - System Build 9a -->
+  <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
+<sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
+
+  <sch:title>Schematron using XPath 2.0</sch:title>
+
+  <sch:ns uri="http://pds.nasa.gov/pds4/pds/v1" prefix="pds"/>
+  <sch:ns uri="http://pds.nasa.gov/pds4/galileo/v1" prefix="galileo"/>
+
+		   <!-- ================================================ -->
+		   <!-- NOTE:  There are two types of schematron rules.  -->
+		   <!--        One type includes rules written for       -->
+		   <!--        specific situations. The other type are   -->
+		   <!--        generated to validate enumerated value    -->
+		   <!--        lists. These two types of rules have been -->
+		   <!--        merged together in the rules below.       -->
+		   <!-- ================================================ -->
+  <sch:pattern>
+    <sch:rule context="galileo:GALILEO/galileo:mission_phase_name">
+      <sch:assert test=". = ('4-Day Checkout', 'Amalthea 34 Encounter', 'Callisto 10 Encounter', 'Callisto 10 Orbit', 'Callisto 20 Encounter', 'Callisto 21 Encounter', 'Callisto 21 Orbit', 'Callisto 22 Encounter', 'Callisto 22 Orbit', 'Callisto 23 Encounter', 'Callisto 23 Orbit', 'Callisto 3 Encounter', 'Callisto 3 Orbit', 'Callisto 30 Encounter', 'Callisto 9 Orbit', 'Earth Jupiter Cruise', 'Earth Venus Cruise', 'Earth-Earth Cruise', 'Earth1 Encounter', 'Europa 11 Encounter', 'Europa 11 Orbit', 'Europa 12 Encounter', 'Europa 13 Orbit', 'Europa 14 Encounter', 'Europa 14 Orbit', 'Europa 15 Encounter', 'Europa 15 Orbit', 'Europa 16 Encounter', 'Europa 16 Orbit', 'Europa 17 Encounter', 'Europa 17 Orbit', 'Europa 18 Encounter', 'Europa 18 Orbit', 'Europa 19 Encounter', 'Europa 19 Orbit', 'Europa 26 Encounter', 'Europa 26 Orbit', 'Europa 4 Encounter', 'Europa 4 Orbit', 'Europa 6 Encounter', 'Europa 6 Orbit', 'Europa Campaign', 'GASPRA Encounter', 'Galileo-Cassini Phase', 'Galileo-Cassini Phase', 'Ganymede 1 Encounter', 'Ganymede 1 Orbit', 'Ganymede 2 Encounter', 'Ganymede 2 Orbit', 'Ganymede 28 Encounter', 'Ganymede 29 Encounter', 'Ganymede 29 Orbit', 'Ganymede 7 Encounter', 'Ganymede 7 Orbit', 'Ganymede 8 Encounter', 'Ganymede 8 Orbit', 'IDA Encounter', 'IO 0 Encounter', 'IO 24 Encounter', 'IO 25 Encounter', 'IO 25 Orbit', 'IO 27 Encounter', 'IO 27 Orbit', 'IO 31 Encounter', 'IO 31 Orbit', 'IO 32 Encounter', 'IO 32 Orbit', 'IO 33 Encounter', 'IO 33 Orbit', 'IO Campaign', 'IO Campaign', 'Inner Jupiter Phase', 'Interplanetary Cruise', 'Jupiter 0 Orbit', 'Jupiter 0 Orbit', 'Jupiter 35 Orbit', 'Jupiter Approach', 'Jupiter Orbit Operations', 'Launch', 'Orbiter Amalthea 34 Orbit', 'Orbiter Callisto 20 Orbiter', 'Orbiter Callisto 30 Orbit', 'Orbiter Europa 12 Orbit', 'Orbiter Ganymede 28 Orbit', 'Orbiter IO 24 Orbit', 'Perijove Reduction Campaign', 'Prime Mission Orbit Operations', 'Probe', 'Probe Release and ODM', 'Venus Earth Cruise', 'Venus Encounter')">
+        The attribute galileo:mission_phase_name must be equal to one of the following values '4-Day Checkout', 'Amalthea 34 Encounter', 'Callisto 10 Encounter', 'Callisto 10 Orbit', 'Callisto 20 Encounter', 'Callisto 21 Encounter', 'Callisto 21 Orbit', 'Callisto 22 Encounter', 'Callisto 22 Orbit', 'Callisto 23 Encounter', 'Callisto 23 Orbit', 'Callisto 3 Encounter', 'Callisto 3 Orbit', 'Callisto 30 Encounter', 'Callisto 9 Orbit', 'Earth Jupiter Cruise', 'Earth Venus Cruise', 'Earth-Earth Cruise', 'Earth1 Encounter', 'Europa 11 Encounter', 'Europa 11 Orbit', 'Europa 12 Encounter', 'Europa 13 Orbit', 'Europa 14 Encounter', 'Europa 14 Orbit', 'Europa 15 Encounter', 'Europa 15 Orbit', 'Europa 16 Encounter', 'Europa 16 Orbit', 'Europa 17 Encounter', 'Europa 17 Orbit', 'Europa 18 Encounter', 'Europa 18 Orbit', 'Europa 19 Encounter', 'Europa 19 Orbit', 'Europa 26 Encounter', 'Europa 26 Orbit', 'Europa 4 Encounter', 'Europa 4 Orbit', 'Europa 6 Encounter', 'Europa 6 Orbit', 'Europa Campaign', 'GASPRA Encounter', 'Galileo-Cassini Phase', 'Galileo-Cassini Phase', 'Ganymede 1 Encounter', 'Ganymede 1 Orbit', 'Ganymede 2 Encounter', 'Ganymede 2 Orbit', 'Ganymede 28 Encounter', 'Ganymede 29 Encounter', 'Ganymede 29 Orbit', 'Ganymede 7 Encounter', 'Ganymede 7 Orbit', 'Ganymede 8 Encounter', 'Ganymede 8 Orbit', 'IDA Encounter', 'IO 0 Encounter', 'IO 24 Encounter', 'IO 25 Encounter', 'IO 25 Orbit', 'IO 27 Encounter', 'IO 27 Orbit', 'IO 31 Encounter', 'IO 31 Orbit', 'IO 32 Encounter', 'IO 32 Orbit', 'IO 33 Encounter', 'IO 33 Orbit', 'IO Campaign', 'IO Campaign', 'Inner Jupiter Phase', 'Interplanetary Cruise', 'Jupiter 0 Orbit', 'Jupiter 0 Orbit', 'Jupiter 35 Orbit', 'Jupiter Approach', 'Jupiter Orbit Operations', 'Launch', 'Orbiter Amalthea 34 Orbit', 'Orbiter Callisto 20 Orbiter', 'Orbiter Callisto 30 Orbit', 'Orbiter Europa 12 Orbit', 'Orbiter Ganymede 28 Orbit', 'Orbiter IO 24 Orbit', 'Perijove Reduction Campaign', 'Prime Mission Orbit Operations', 'Probe', 'Probe Release and ODM', 'Venus Earth Cruise', 'Venus Encounter'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+</sch:schema>
