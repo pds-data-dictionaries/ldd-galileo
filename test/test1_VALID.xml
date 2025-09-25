@@ -89,9 +89,9 @@
               <galileo:observation_type>NIMS FIXED MAP</galileo:observation_type>
           </galileo:Observation_Information>
           <galileo:Geometry>
-              <galileo:north_azimuth unit="degrees">0</galileo:north_azimuth>
+              <galileo:north_azimuth unit="deg">0</galileo:north_azimuth>
               <galileo:positive_longitude_direction>West</galileo:positive_longitude_direction>
-              <galileo:cone_angle unit="degrees">0</galileo:cone_angle>
+              <galileo:cone_angle unit="deg">0</galileo:cone_angle>
           </galileo:Geometry>
       </galileo:Galileo>
     </Mission_Area>
