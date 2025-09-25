@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:galileo  Version:1.0.0.0 - Thu Sep 25 20:32:46 UTC 2025 -->
+  <!-- PDS4 Schematron for Name Space Id:galileo  Version:1.0.0.0 - Thu Sep 25 21:58:10 UTC 2025 -->
   <!-- Generated from the PDS4 Information Model Version 1.24.0.0 - System Build 15.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -18,6 +18,13 @@
 		   <!--        lists. These two types of rules have been -->
 		   <!--        merged together in the rules below.       -->
 		   <!-- ================================================ -->
+  <sch:pattern>
+    <sch:rule context="galileo:Geometry/galileo:cone_angle">
+      <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad')">
+        <title>galileo:Geometry/galileo:cone_angle/galileo:cone_angle</title>
+        The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad'.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
   <sch:pattern>
     <sch:rule context="galileo:Geometry/galileo:north_azimuth">
       <sch:assert test="@unit = ('arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad')">

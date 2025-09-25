@@ -3,11 +3,13 @@
 >>  INFO IM Version Id: 1.23.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.0
->>  INFO Date: Thu Sep 25 21:51:07 UTC 2025
+>>  INFO Date: Thu Sep 25 21:58:05 UTC 2025
 >>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
 >>> INFO Init:  - LDD Dictionary_Type is Mission
+>>> INFO Attribute: <cone_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <cone_angle> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> INFO Attribute: <north_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <north_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360
 >>> WARNING Init:  - Config.Properties Namespace Id Not Found:galileo

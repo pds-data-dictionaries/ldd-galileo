@@ -7,10 +7,10 @@ Configuration:
    LDD Discipline (T/F):  false
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Thu Sep 25 20:32:46 UTC 2025
-   Common Schema          [PDS4_PDS_1O00.xsd]
-   Common Schematron      [PDS4_PDS_1O00.sch]
-   IM Version Id:         1.24.0.0
+   Time                   Thu Sep 25 21:58:05 UTC 2025
+   Common Schema          [PDS4_PDS_1N00.xsd]
+   Common Schematron      [PDS4_PDS_1N00.sch]
+   IM Version Id:         1.23.0.0
    IM Namespace Id:       pds
    IM Label Version Id:   1.0
    IM Object Model        [UpperModel.pont]
@@ -29,8 +29,8 @@ Parameters:
 
 Summary:
    Classes                3
-   Attributes             4
-   Associations           5
+   Attributes             5
+   Associations           7
    Error messages         0
    Warning messages       0
    Information messages   0
@@ -49,8 +49,16 @@ Parsed Input - Header:
 
 Parsed Input - Attributes:
 
+   name                   cone_angle
+   version                1.23
+   value data type        ASCII_Real
+   description             The cone_angle element provides the value of the angle between the primary spacecraft axis and the pointing direction of the instrument. 
+   minimum value          0
+   maximum value          360
+   unit of measure type   Units_of_Angle
+
    name                   north_azimuth
-   version                1.24
+   version                1.23
    value data type        ASCII_Real
    description             The north_azimuth element provides the value of the angle between a line from the image center to the north pole and a reference line in the image plane. The reference line is a horizontal line from the image center to the middle right edge of the image. This angle increases in a clockwise direction. 
    minimum value          0
@@ -58,17 +66,17 @@ Parsed Input - Attributes:
    unit of measure type   Units_of_Angle
 
    name                   observation_id
-   version                1.24
+   version                1.23
    value data type        ASCII_Short_String_Collapsed
    description             The observation_id element uniquely identifies a scientific observation within a data set. Note: For Galileo the observation_id is in the form NNTIOOOOOOMM#SSSXXXX. Where NN is the orbit number, T is the scan platform target body initial (if applicable), I is the instrument, oooooo is the orbit planning guide objective mnemonic, MM is the sequential OAPEL number for each value of NNTIOOOOOO, # is the multiple observation flag symbol (- or +), SSS is the PA set number and XXXX is the MIPL processing code. The first portion of the observation ID is a 12-character field that begins with two characters for the orbit (e.g., E4, with the letter dropped after orbit C9), followed by one letter for the target body (J - Jupiter, C - Callisto, E - Europa, G - Ganymede, I - Io, N - calibration target, X - space or not applicable), followed by one letter for the prime instrument for the OAPEL (N - NIMS, P - PPR, S - SSI, U - UVS), followed by six characters for the observation name (usually the OAPEL type, but also proper names or abbreviations thereof), followed by a 2-digit observation series number. Thus, the observation IDs for the two PPR global maps of Jupiter in orbit G1 are G1JPGLOBAL01 and G1JPGLOBAL02, while the PPR ride-along with one of the NIMS observations of a brown barge at 42-degree phase angle in orbit E11 is 11JNBRG04203. An exception to the leading portion (prior to -RDR) of the PRODUCT_NAME being identical to the observation ID is that we retain the leading letter for the orbits after C9. 
 
    name                   observation_type
-   version                1.24
+   version                1.23
    value data type        ASCII_Short_String_Collapsed
    description             The type of observation. 
 
    name                   positive_longitude_direction
-   version                1.24
+   version                1.23
    value data type        ASCII_Short_String_Collapsed
    description             The positive_longitude_direction element identifies the direction of longitude (e.g. EAST, WEST) for a planet. The IAU definition for direction of positive longitude is adopted. Typically, for planets with prograde rotations, positive longitude direction is to the WEST. For planets with retrograde rotations, positive longitude direction is to the EAST. Note: The positive_longitude_direction keyword should be used for planetographic systems, but not for planetocentric." 
 
@@ -110,6 +118,11 @@ Parsed Input - Classes:
       maximum occurrences   1
       reference type        attribute_of
 
+      local identifier      galileo:cone_angle
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
    name                   Galileo
    description            Galileo related properties.
    is abstract            false
@@ -117,6 +130,11 @@ Parsed Input - Classes:
    subclass of            USER
 
    Associations
+
+      local identifier      galileo:Observation_Information
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        component_of
 
       local identifier      galileo:Geometry
       minimum occurrences   0
