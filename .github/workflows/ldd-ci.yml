@@ -109,7 +109,7 @@ jobs:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN || github.token }}
           ssh-key: ${{ secrets.SSH_KEY }}
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           path: /tmp/artifacts
 
@@ -151,7 +151,7 @@ jobs:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN || github.token }}
           ssh-key: ${{ secrets.SSH_KEY }}
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           path: /tmp/artifacts
 
