@@ -1,0 +1,61 @@
+
+PDS Validate Tool Report
+
+Configuration:
+   Version     3.7.1
+   Date        2025-09-25T21:39:36Z
+
+Parameters:
+   Targets                        [file:/home/runner/work/ldd-galileo/ldd-galileo/test/test1_VALID.xml]
+   Rule Type                      pds4.label
+   User Specified Schemas         [file:/home/runner/work/ldd-galileo/ldd-galileo/build/development/f61dcaa695e4407455d5dfd5f4f6caac90a77c3e/1.24.0.0/PDS4_GALILEO_1O00_1000.xsd, file:/tmp/PDS4_PDS_1O00.xsd]
+   User Specified Schematrons     [file:/home/runner/work/ldd-galileo/ldd-galileo/build/development/f61dcaa695e4407455d5dfd5f4f6caac90a77c3e/1.24.0.0/PDS4_GALILEO_1O00_1000.sch, file:/tmp/PDS4_PDS_1O00.sch]
+   Severity Level                 WARNING
+   Recurse Directories            true
+   File Filters Used              [*.xml, *.XML]
+   Data Content Validation        off
+   Product Level Validation       on
+   Max Errors                     100000
+   Registered Contexts File       /tmp/validate-3.7.1/resources/registered_context_products.json
+
+
+
+Product Level Validation Results
+
+  FAIL: file:/home/runner/work/ldd-galileo/ldd-galileo/test/test1_VALID.xml
+      WARNING  [warning.label.schema]   Cannot check versioning because no Schema given.
+      ERROR  [error.label.schema]   line 87, 44: cvc-complex-type.2.4.a: Invalid content was found starting with element '{"http://pds.nasa.gov/pds4/mission/galileo/v1":Observation_Information}'. One of '{"http://pds.nasa.gov/pds4/mission/galileo/v1":Geometry}' is expected.
+      ERROR  [error.label.schema]   line 92, 53: cvc-enumeration-valid: Value 'degrees' is not facet-valid with respect to enumeration '[arcmin, arcsec, deg, hr, microrad, mrad, rad]'. It must be a value from the enumeration.
+      ERROR  [error.label.schema]   line 92, 53: cvc-attribute.3: The value 'degrees' of attribute 'unit' on element 'galileo:north_azimuth' is not valid with respect to its type, 'Units_of_Angle'.
+      ERROR  [error.label.schema]   line 94, 50: cvc-complex-type.2.4.d: Invalid content was found starting with element 'galileo:cone_angle'. No child element is expected at this point.
+      ERROR  [error.label.schematron]   line 92, 53: The attribute @unit must be equal to one of the following values 'arcmin', 'arcsec', 'deg', 'hr', 'microrad', 'mrad', 'rad'.
+      WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
+        1 product validation(s) completed
+
+Summary:
+
+  1 product(s)
+  5 error(s)
+  2 warning(s)
+
+  Product Validation Summary:
+    0          product(s) passed
+    1          product(s) failed
+    0          product(s) skipped
+    1          product(s) total
+
+  Referential Integrity Check Summary:
+    0          check(s) passed
+    0          check(s) failed
+    0          check(s) skipped
+    0          check(s) total
+
+  Message Types:
+    4            error.label.schema
+    1            error.label.schematron
+    1            warning.label.missing_schematron_spec
+    1            warning.label.schema
+
+End of Report
+Completed execution in 4733 ms
+
