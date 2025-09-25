@@ -28,7 +28,7 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN || github.token }}
           ssh-key: ${{ secrets.SSH_KEY }}
@@ -57,7 +57,7 @@ jobs:
       matrix: ${{fromJson(needs.get_versions.outputs.matrix)}}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN || github.token }}
           ssh-key: ${{ secrets.SSH_KEY }}
@@ -104,7 +104,7 @@ jobs:
     if: ${{ failure() && github.actor != 'pdsen-ci' }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN || github.token }}
           ssh-key: ${{ secrets.SSH_KEY }}
@@ -146,7 +146,7 @@ jobs:
     if: ${{ github.actor != 'pdsen-ci' }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           token: ${{ secrets.ADMIN_GITHUB_TOKEN || github.token }}
           ssh-key: ${{ secrets.SSH_KEY }}
