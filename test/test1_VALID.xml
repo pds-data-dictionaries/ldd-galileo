@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- NOTE: DO NOT INCLUDE SPECIFIC SCHEMATRONS IN LABEL. THEY WILL BE ADDED VIA PIPELINE -->
+
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" 
+  xmlns:example="http://pds.nasa.gov/pds4/example/v1"  
+  xmlns:pds="http://pds.nasa.gov/pds4/pds/v1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <!-- NOTE: DO NOT INCLUDE SPECIFIC SCHEMALOCATIONS IN LABEL. THEY WILL BE ADDED VIA PIPELINE -->
+
+    <Identification_Area>
+        <logical_identifier>urn:nasa:pds:test:data:gaspra_nims_hires_radiance_cube_fit</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>Galileo NIMS High-resolution Spectral Radiance Image Cube of 951 Gaspra</title>
+    <information_model_version>1.23.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Citation_Information>
+      <publication_year>2025</publication_year>
+      <description>Galileo NIMS High-resolution Spectral Radiance Image Cube of 951 Gaspra. This data is derived from DN values in PDS file GAP016TN.QUB and calibrated with values from the PDS file G1GNGLOBAL01A_MSY04.IOF (OBSERVATION_ID GAPNGASPAT01).</description>
+      <List_Author>
+        <Person>
+          <given_name>James C.</given_name>
+          <family_name>Granahan</family_name>
+        </Person>
+      </List_Author>
+    </Citation_Information>
+    <Modification_History>
+      <Modification_Detail>
+        <modification_date>2025-09-16</modification_date>
+        <version_id>1.0</version_id>
+        <description>Migrated from PDS3 GO-A-NIMS-4-GASPRACUBE-V1.0</description>
+      </Modification_Detail>
+    </Modification_History>
+    </Identification_Area>
+    <Observation_Area>
+        <Time_Coordinates>
+            <start_date_time>1991-10-29T22:20:56Z</start_date_time>
+            <stop_date_time>1991-10-29T22:28:15Z</stop_date_time>
+        </Time_Coordinates>
+    <Primary_Result_Summary>
+      <purpose>Science</purpose>
+      <processing_level>Derived</processing_level>
+      <Science_Facets>
+        <wavelength_range>Near Infrared</wavelength_range>
+        <discipline_name>Spectroscopy</discipline_name>
+        <facet1>Tabulated</facet1>
+      </Science_Facets>
+    </Primary_Result_Summary>
+    <Investigation_Area>
+      <name>Galileo</name>
+      <type>Mission</type>
+      <Internal_Reference>
+         <lid_reference>urn:nasa:pds:context:investigation:mission.galileo</lid_reference>
+         <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>GALILEO ORBITER</name>
+        <type>Host</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.go</lid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>Near Infrared Mapping Spectrometer for GO</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lid_reference>urn:nasa:pds:context:instrument:go.nims</lid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>951 Gaspra</name>
+      <type>Asteroid</type>
+      <Internal_Reference>
+        <lid_reference>urn:nasa:pds:context:target:asteroid.951_gaspra</lid_reference>
+        <reference_type>data_to_target</reference_type>
+      </Internal_Reference>
+    </Target_Identification>
+    <Mission_Area>    
+      <galileo:Galileo>
+          <galileo:Observation_Information>
+              <galileo:observation_id>NNTIOOOOOOMM#SSSXXXX</galileo:observation_id>
+              <galileo:observation_type>NIMS FIXED MAP</galileo:observation_type>
+          </galileo:Observation_Information>
+          <galileo:Geometry>
+              <galileo:north_azimuth unit="degrees">0</galileo:north_azimuth>
+              <galileo:positive_longitude_direction>West</galileo:positive_longitude_direction>
+              <galileo:cone_angle unit="degrees">0</galileo:cone_angle>
+          </galileo:Geometry>
+      </galileo:Galileo>
+    </Mission_Area>
+  </Observation_Area>
+  <Reference_List>
+    <Internal_Reference>
+      <lidvid_reference>urn:nasa:pds:galileo.ast-gaspra.nims.spectral-cubes:data:calib_tab::1.0</lidvid_reference>
+      <reference_type>data_to_calibration_product</reference_type>
+      <comment>Tabel required for (non-geometric) processing of NIMS data, containing sensitivity and dark values</comment>
+    </Internal_Reference>
+  </Reference_List>
+    <File_Area_Observational>
+        <File>
+            <file_name>gaspra_nims_hires_radiance.fit</file_name>
+            <creation_date_time>2012-07-23Z</creation_date_time>
+            <file_size unit="byte">1359360</file_size>
+        </File>
+        <Header>
+            <name>Calibrated Spectral Radiance Header</name>
+            <offset unit="byte">0</offset>
+            <object_length unit="byte">5760</object_length>
+            <parsing_standard_id>FITS 3.0</parsing_standard_id>
+        </Header>
+        <Array_3D_Spectrum>
+            <name>Calibrated Spectral Radiance</name>
+            <local_identifier>primary_image</local_identifier>
+            <offset unit="byte">5760</offset>
+            <axes>3</axes>
+            <axis_index_order>Last Index Fastest</axis_index_order>
+            <description>This contains the radiance precision values, per pixel, for the image array</description>
+            <Element_Array>
+                <data_type>IEEE754MSBSingle</data_type>
+                <unit>microwatt*cm**-2*sr**-1*microm**-1</unit>
+                <scaling_factor>1.0</scaling_factor>
+                <value_offset>0.0</value_offset>
+            </Element_Array>
+            <Axis_Array>
+                <axis_name>Band</axis_name>
+                <elements>17</elements>
+                <sequence_number>1</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Sample</axis_name>
+                <elements>66</elements>
+                <sequence_number>2</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Line</axis_name>
+                <elements>100</elements>
+                <sequence_number>3</sequence_number>
+            </Axis_Array>
+            <Special_Constants>
+              <missing_constant>-1.0</missing_constant>
+              <high_instrument_saturation>-32765.0</high_instrument_saturation>
+              <high_representation_saturation>-32764.0</high_representation_saturation>
+              <valid_minimum>0.0</valid_minimum>
+              <low_instrument_saturation>-32766.0</low_instrument_saturation>
+              <low_representation_saturation>-32767.0</low_representation_saturation>
+            </Special_Constants>
+        </Array_3D_Spectrum>
+        <Header>
+            <name>Wavelength Header</name>
+            <offset unit="byte">455040</offset>
+            <object_length unit="byte">2880</object_length>
+            <parsing_standard_id>FITS 3.0</parsing_standard_id>
+        </Header>
+        <Array_3D>
+            <name>Wavelength Extension</name>
+            <offset unit="byte">457920</offset>
+            <axes>3</axes>
+            <axis_index_order>Last Index Fastest</axis_index_order>
+            <description>This extension contains the wavelength values, per pixel, for the image array</description>
+            <Element_Array>
+                <data_type>IEEE754MSBSingle</data_type>
+                <unit>micrometer</unit>
+                <scaling_factor>1.0</scaling_factor>
+                <value_offset>0.0</value_offset>
+            </Element_Array>
+            <Axis_Array>
+                <axis_name>Band</axis_name>
+                <elements>17</elements>
+                <sequence_number>1</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+              <axis_name>Sample</axis_name>
+              <elements>66</elements>
+              <sequence_number>2</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Line</axis_name>
+                <elements>100</elements>
+                <sequence_number>3</sequence_number>
+            </Axis_Array>
+        </Array_3D> 
+        <Header>
+            <name>Radiance Error Header</name>
+            <offset unit="byte">907200</offset>
+            <object_length unit="byte">2880</object_length>
+            <parsing_standard_id>FITS 3.0</parsing_standard_id>
+        </Header>
+        <Array_3D>
+            <name>Radiance Error Extension</name>
+            <offset unit="byte">910080</offset>
+            <axes>3</axes>
+            <axis_index_order>Last Index Fastest</axis_index_order>
+            <description>This extension contains the error in the radiance precision values, per pixel, for the image array.</description>
+            <Element_Array>
+                <data_type>IEEE754MSBSingle</data_type>
+                <unit>microwatt*cm**-2*sr**-1*microm**-1</unit>
+                <scaling_factor>1.0</scaling_factor>
+                <value_offset>0.0</value_offset>
+            </Element_Array>
+            <Axis_Array>
+              <axis_name>Band</axis_name>
+              <elements>17</elements>
+              <sequence_number>1</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+              <axis_name>Sample</axis_name>
+              <elements>66</elements>
+              <sequence_number>2</sequence_number>
+            </Axis_Array>
+            <Axis_Array>
+                <axis_name>Line</axis_name>
+                <elements>100</elements>
+                <sequence_number>3</sequence_number>
+            </Axis_Array>
+        </Array_3D>
+    </File_Area_Observational>
+</Product_Observational>
