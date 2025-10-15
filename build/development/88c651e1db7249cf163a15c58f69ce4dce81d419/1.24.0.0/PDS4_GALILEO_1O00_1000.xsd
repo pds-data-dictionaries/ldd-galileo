@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:galileo  Version:1.0.0.0 - Thu Sep 25 21:58:10 UTC 2025 -->
+  <!-- Generated from the PDS4 Information Model Version 1.24.0.0 - System Build 15.1 -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.24.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.0.0.0 - galileo: - Galileo                                              -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://pds.nasa.gov/pds4/mission/galileo/v1"
+    xmlns:galileo="http://pds.nasa.gov/pds4/mission/galileo/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.0.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1O00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+Classes to support the migration of Galileo data.
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="Galileo" type="galileo:Galileo"> </xs:element>
+
+  <xs:complexType name="Galileo">
+    <xs:annotation>
+<xs:documentation>Galileo related properties.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Observation_Information" type="galileo:Observation_Information" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="Geometry" type="galileo:Geometry" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Geometry">
+    <xs:annotation>
+      <xs:documentation>Additional geometry for
+        Galileo</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="north_azimuth" type="galileo:north_azimuth" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="positive_longitude_direction" type="galileo:positive_longitude_direction" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="cone_angle" type="galileo:cone_angle" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="galileo:positive_longitude_direction = ('East', 'West')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Observation_Information">
+    <xs:annotation>
+      <xs:documentation>Information to help identify the
+        observation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="observation_id" type="galileo:observation_id" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="observation_type" type="galileo:observation_type" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="cone_angle_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="360"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="cone_angle">
+    <xs:annotation>
+      <xs:documentation> The cone_angle element provides the value of
+        the angle between the primary spacecraft axis and the pointing
+        direction of the instrument. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="galileo:cone_angle_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="north_azimuth_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="0"/>
+     <xs:maxInclusive value="360"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="north_azimuth">
+    <xs:annotation>
+      <xs:documentation> The north_azimuth element provides the value of
+        the angle between a line from the image center to the north pole
+        and a reference line in the image plane. The reference line is a
+        horizontal line from the image center to the middle right edge
+        of the image. This angle increases in a clockwise direction.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="galileo:north_azimuth_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="observation_id">
+    <xs:annotation>
+      <xs:documentation> The observation_id element uniquely identifies
+        a scientific observation within a data set. Note: For Galileo
+        the observation_id is in the form NNTIOOOOOOMM#SSSXXXX. Where NN
+        is the orbit number, T is the scan platform target body initial
+        (if applicable), I is the instrument, oooooo is the orbit
+        planning guide objective mnemonic, MM is the sequential OAPEL
+        number for each value of NNTIOOOOOO, # is the multiple
+        observation flag symbol (- or +), SSS is the PA set number and
+        XXXX is the MIPL processing code. The first portion of the
+        observation ID is a 12-character field that begins with two
+        characters for the orbit (e.g., E4, with the letter dropped
+        after orbit C9), followed by one letter for the target body (J -
+        Jupiter, C - Callisto, E - Europa, G - Ganymede, I - Io, N -
+        calibration target, X - space or not applicable), followed by
+        one letter for the prime instrument for the OAPEL (N - NIMS, P -
+        PPR, S - SSI, U - UVS), followed by six characters for the
+        observation name (usually the OAPEL type, but also proper names
+        or abbreviations thereof), followed by a 2-digit observation
+        series number. Thus, the observation IDs for the two PPR global
+        maps of Jupiter in orbit G1 are G1JPGLOBAL01 and G1JPGLOBAL02,
+        while the PPR ride-along with one of the NIMS observations of a
+        brown barge at 42-degree phase angle in orbit E11 is
+        11JNBRG04203. An exception to the leading portion (prior to
+        -RDR) of the PRODUCT_NAME being identical to the observation ID
+        is that we retain the leading letter for the orbits after C9.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="observation_type">
+    <xs:annotation>
+<xs:documentation> The type of observation. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="positive_longitude_direction">
+    <xs:annotation>
+      <xs:documentation> The positive_longitude_direction element
+        identifies the direction of longitude (e.g. EAST, WEST) for a
+        planet. The IAU definition for direction of positive longitude
+        is adopted. Typically, for planets with prograde rotations,
+        positive longitude direction is to the WEST. For planets with
+        retrograde rotations, positive longitude direction is to the
+        EAST. Note: The positive_longitude_direction keyword should be
+        used for planetographic systems, but not for planetocentric."
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

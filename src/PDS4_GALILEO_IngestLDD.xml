@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1O00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Ingest_LDD 
+	xmlns="http://pds.nasa.gov/pds4/pds/v1" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:galileo="http://pds.nasa.gov/pds4/mission/galileo/v1" 
+	xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1O00.xsd">
+
+	<name>Galileo</name>
+    <ldd_version_id>1.0.0.0</ldd_version_id>
+    <dictionary_type>Mission</dictionary_type>
+	<full_name>Jesse Stone</full_name>
+	<steward_id>sbn</steward_id>
+	<namespace_id>galileo</namespace_id>
+	<comment>Classes to support the migration of Galileo data.</comment>
+	<last_modification_date_time>2025-09-17T00:00:00.000Z</last_modification_date_time>
+
+
+    <DD_Attribute>
+        <name>cone_angle</name>
+        <version_id>1.0</version_id>
+        <local_identifier>cone_angle</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>
+            The cone_angle element provides the value of the angle
+            between the primary spacecraft axis and the pointing
+            direction of the instrument.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>360</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+
+
+    <DD_Attribute>
+        <name>north_azimuth</name>
+        <version_id>1.0</version_id>
+        <local_identifier>north_azimuth</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>
+            The north_azimuth element provides the value of the angle
+            between a line from the image center to the north pole and
+            a reference line in the image plane.  The reference line is
+            a horizontal line from the image center to the middle right
+            edge of the image.
+            This angle increases in a clockwise direction.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Real</value_data_type>
+            <minimum_value>0</minimum_value>
+            <maximum_value>360</maximum_value>
+            <unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+            <specified_unit_id>deg</specified_unit_id>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>observation_id</name>
+        <version_id>1.0</version_id>
+        <local_identifier>observation_id</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>
+            The observation_id element uniquely identifies a scientific observation
+            within a data set.
+            Note: For Galileo the observation_id is in
+            the form NNTIOOOOOOMM#SSSXXXX. Where NN is the orbit
+            number, T is the scan platform target body initial (if
+            applicable), I is the instrument, oooooo is the orbit
+            planning guide objective mnemonic, MM is the sequential
+            OAPEL number for each value of NNTIOOOOOO, # is the
+            multiple observation flag symbol (- or +), SSS is the PA
+            set number and XXXX is the MIPL processing code.
+
+            The first portion of the observation ID is a 12-character field that begins with two
+            characters for the orbit (e.g., E4, with the letter dropped after
+            orbit C9), followed by one letter for the target body (J - Jupiter,
+            C - Callisto, E - Europa, G - Ganymede, I - Io, N - calibration
+            target, X - space or not applicable), followed by one letter for the
+            prime instrument for the OAPEL (N - NIMS, P - PPR, S - SSI, U - UVS),
+            followed by six characters for the observation name (usually the OAPEL
+            type, but also proper names or abbreviations thereof), followed by a
+            2-digit observation series number. Thus, the observation IDs for the
+            two PPR global maps of Jupiter in orbit G1 are G1JPGLOBAL01 and
+            G1JPGLOBAL02, while the PPR ride-along with one of the NIMS
+            observations of a brown barge at 42-degree phase angle in orbit E11 is
+            11JNBRG04203. An exception to the leading portion (prior to -RDR) of
+            the PRODUCT_NAME being identical to the observation ID is that we
+            retain the leading letter for the orbits after C9.             
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+    <DD_Attribute>
+        <name>observation_type</name>
+        <version_id>1.0</version_id>
+        <local_identifier>observation_type</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>
+            The type of observation.
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>false</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>NIMS SAFE</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>
+            <DD_Permissible_Value>
+                <value>NIMS FULL MAP</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>            
+            <DD_Permissible_Value>
+                <value>NIMS FULL SPECTROMETER</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>            
+            <DD_Permissible_Value>
+                <value>NIMS LONG MAP</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>            
+            <DD_Permissible_Value>
+                <value>NIMS LONG SPECTROMETER</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>            
+            <DD_Permissible_Value>
+                <value>NIMS SHORT MAP</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>            
+            <DD_Permissible_Value>
+                <value>NIMS SHORT SPECTROMETER</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>            
+            <DD_Permissible_Value>
+                <value>NIMS FIXED MAP</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>            
+            <DD_Permissible_Value>
+                <value>NIMS BAND EDGE MAP</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>            
+            <DD_Permissible_Value>
+                <value>NIMS BAND EDGE SPECTROMETER</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>            
+            <DD_Permissible_Value>
+                <value>NIMS STOP&amp;SLIDE MAP</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>            
+            <DD_Permissible_Value>
+                <value>NIMS STOP&amp;SLIDE SPECTROMETER</value>
+                <value_meaning>...</value_meaning>
+            </DD_Permissible_Value>            
+
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+
+    <DD_Attribute>
+        <name>positive_longitude_direction</name>
+        <version_id>1.0</version_id>
+        <local_identifier>positive_longitude_direction</local_identifier>
+        <nillable_flag>false</nillable_flag>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>
+            The positive_longitude_direction element identifies the
+            direction of longitude (e.g. EAST, WEST) for a planet.  The
+            IAU definition for direction of positive longitude is
+            adopted.  Typically, for planets with prograde rotations,
+            positive longitude direction is to the WEST.  For planets
+            with retrograde rotations, positive longitude direction is
+            to the EAST.
+            Note:  The positive_longitude_direction keyword should be used for
+            planetographic systems, but not for planetocentric."
+        </definition>
+        <DD_Value_Domain>
+            <enumeration_flag>true</enumeration_flag>
+            <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+            <DD_Permissible_Value>
+                <value>West</value>
+                <value_meaning>For planets with prograde rotations, positive longitude direction is to the WEST.</value_meaning>
+            </DD_Permissible_Value>            
+            <DD_Permissible_Value>
+                <value>East</value>
+                <value_meaning>For planets with retrograde rotations, positive longitude direction is to the EAST</value_meaning>
+            </DD_Permissible_Value>            
+        </DD_Value_Domain>
+    </DD_Attribute>
+
+
+    <!-- Class: Geometry -->
+    <DD_Class>
+        <name>Observation_Information</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Observation_Information</local_identifier>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Information to help identify the observation.</definition>
+        <DD_Association>
+            <identifier_reference>observation_id</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>observation_type</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+
+    <DD_Class>
+        <name>Geometry</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Geometry</local_identifier>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Additional geometry for Galileo</definition>
+        <DD_Association>
+            <identifier_reference>north_azimuth</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>positive_longitude_direction</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>cone_angle</identifier_reference>
+            <reference_type>attribute_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+
+
+    <DD_Class>
+        <name>Galileo</name>
+        <version_id>1.0</version_id>
+        <local_identifier>Galileo</local_identifier>
+        <submitter_name>Jesse Stone</submitter_name>
+        <definition>Galileo related properties.</definition>
+        <element_flag>true</element_flag>
+        <DD_Association>
+            <identifier_reference>Observation_Information</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+        <DD_Association>
+            <identifier_reference>Geometry</identifier_reference>
+            <reference_type>component_of</reference_type>
+            <minimum_occurrences>0</minimum_occurrences>
+            <maximum_occurrences>1</maximum_occurrences>
+        </DD_Association>
+    </DD_Class>
+</Ingest_LDD>

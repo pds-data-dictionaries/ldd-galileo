@@ -1,0 +1,39 @@
+
+>>  INFO LDDTOOL Version: 15.3.0
+>>  INFO IM Version Id: 1.24.0.0
+>>  INFO IM Namespace Id: pds
+>>  INFO IM Label Version Id: 1.0
+>>  INFO Date: Thu Sep 25 21:58:10 UTC 2025
+>>  INFO PARENT_DIR: /tmp/lddtool-15.3.0/Data/
+
+>>> INFO Init:  - Config.Properties Namespace Id Using:pds
+>>> INFO Init:  - LDD Dictionary_Type is Mission
+>>> INFO Attribute: <cone_angle> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <cone_angle> - The default maximum value provided by the attribute's data type is being overridden with 360
+>>> INFO Attribute: <north_azimuth> - The default minimum value provided by the attribute's data type is being overridden with 0
+>>> INFO Attribute: <north_azimuth> - The default maximum value provided by the attribute's data type is being overridden with 360
+>>> WARNING Init:  - Config.Properties Namespace Id Not Found:galileo
+>>> WARNING Attribute: <observation_type> - An attribute with the enumeration_flag = false must not have any permissible values.
+
+ -- LDDTool Execution Summary --
+     2 warning(s)
+     0 error(s)
+     0 fatal error(s)
+
+Input:
+
+     - IM Version: 1O00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-galileo/ldd-galileo/src/PDS4_GALILEO_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_GALILEO_1O00_1000.xsd
+     - ./PDS4_GALILEO_1O00_1000.sch
+     - ./PDS4_GALILEO_1O00_1000.xml
+     - ./export/PDS4_PDS_1O00.JSON
+
+>>  INFO Exit(0)
