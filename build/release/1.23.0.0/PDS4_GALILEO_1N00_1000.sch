@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:galileo  Version:1.0.0.0 - Thu Sep 25 21:58:05 UTC 2025 -->
+  <!-- PDS4 Schematron for Name Space Id:galileo  Version:1.0.0.0 - Tue Oct 28 17:45:58 UTC 2025 -->
   <!-- Generated from the PDS4 Information Model Version 1.23.0.0 - System Build 15.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">

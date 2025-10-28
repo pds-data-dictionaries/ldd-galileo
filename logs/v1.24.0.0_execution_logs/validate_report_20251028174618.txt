@@ -3,13 +3,13 @@ PDS Validate Tool Report
 
 Configuration:
    Version     3.7.1
-   Date        2025-09-25T21:58:15Z
+   Date        2025-10-28T17:46:18Z
 
 Parameters:
    Targets                        [file:/home/runner/work/ldd-galileo/ldd-galileo/test/test1_VALID.xml]
    Rule Type                      pds4.label
-   User Specified Schemas         [file:/home/runner/work/ldd-galileo/ldd-galileo/build/development/88c651e1db7249cf163a15c58f69ce4dce81d419/1.23.0.0/PDS4_GALILEO_1N00_1000.xsd, file:/tmp/PDS4_PDS_1N00.xsd]
-   User Specified Schematrons     [file:/home/runner/work/ldd-galileo/ldd-galileo/build/development/88c651e1db7249cf163a15c58f69ce4dce81d419/1.23.0.0/PDS4_GALILEO_1N00_1000.sch, file:/tmp/PDS4_PDS_1N00.sch]
+   User Specified Schemas         [file:/home/runner/work/ldd-galileo/ldd-galileo/build/development/713be317c67da88a74bdf4dc6c5b66856ddcae02/1.24.0.0/PDS4_GALILEO_1O00_1000.xsd, file:/tmp/PDS4_PDS_1O00.xsd]
+   User Specified Schematrons     [file:/home/runner/work/ldd-galileo/ldd-galileo/build/development/713be317c67da88a74bdf4dc6c5b66856ddcae02/1.24.0.0/PDS4_GALILEO_1O00_1000.sch, file:/tmp/PDS4_PDS_1O00.sch]
    Severity Level                 WARNING
    Recurse Directories            true
    File Filters Used              [*.xml, *.XML]
@@ -50,5 +50,5 @@ Summary:
     1            warning.label.schema
 
 End of Report
-Completed execution in 5025 ms
+Completed execution in 4663 ms
 
