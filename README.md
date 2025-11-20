@@ -26,9 +26,7 @@ The {dictionary name} dictionary provides classes and attributes for
 
 <!-- The following assumes the complete documentation set exists. If it
 does not, edit the sentence and link accordingly. -->
-The User's Guide and detailed documentation for using this dictionary in
-label design and processing
-are located at https://pds-data-dictionaries.github.io/{repo id}.
+[User's Guide](Galileo_Users_Guide.pdf)
 <!-- EXAMPLE
      are located at https://pds-data-dictionaries.github.io/ldd-template.
 -->
